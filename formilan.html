@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Untuk Kamu, Sayang</title>
+  <style>
+    body {
+      background: #ffe6e6;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .page {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      animation-duration: 1s;
+    }
+
+    .page.active {
+      display: flex;
+      animation-name: fadeInPage;
+    }
+
+    @keyframes fadeInPage {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      text-align: center;
+      max-width: 600px;
+      width: 90%;
+    }
+
+    h1, h2 {
+      color: #e60073;
+      margin-top: 0;
+    }
+
+    p {
+      font-size: 18px;
+      margin: 15px 0;
+    }
+
+    .heart {
+      font-size: 40px;
+      color: red;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    .photo {
+      margin: 20px 0;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .photo img {
+      width: 100%;
+      height: auto;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: #e60073;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #cc005f;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Halaman Utama -->
+  <div class="page active" id="page1">
+    <div class="card">
+      <div class="heart">❤️</div>
+      <h1>Hai, Sayang!</h1>
+      <div class="photo">
+        <img src="mimo.jpg.jpg" alt="My precious one, Milan" />
+      </div>
+      <p>Terima kasih sudah jadi bagian terindah dalam hidupku.</p>
+      <p>Kalau dunia lagi rumit, biarin aku tetep di samping kamu.</p>
+      <p>I adore you so much, Milanku. 💖</p>
+
+      <audio controls autoplay loop>
+        <source src="You'll be in my heart.mp3" type="audio/mp3" />
+      </audio>
+
+      <button onclick="showPage('page2')">Lihat Kejutan 🎁</button>
+    </div>
+  </div>
+
+  <!-- Halaman Kejutan -->
+  <div class="page" id="page2">
+    <div class="card">
+      <h2>Satu Hal Lagi 💌</h2>
+      <p>Kamu selalu pantas dicintai setiap hari. Jangan pernah ragu sama diri sendiri, ya?</p>
+      <p>Aku percaya kamu, dan aku bangga banget sama kamu.</p>
+      <p>Jatuh cinta padamu tidak hanya menghasilkan rasa senang, tapi juga rasa tenang. Beriringan denganmu tidak hanya membuatku lebih banyak tertawa, tapi juga mensyukuri setiap momen yang ada. Aku tidak pernah membayangkan bahwa aku akan menemukan cinta yang sehangat ini, sedamai ini, serta sebahagia ini.</p>
+      <p>Jika perihal mencintaimu seperti filosofi bumi dan manusia. Karena, rasa ini lebih abadi dibandingkan tempat dan makhluk hidup.</p>
+      <a href="index.html" onclick="event.preventDefault(); animateAndGo(this.href)">Balik ke Halaman Utama 💖</a>
+    </div>
+  </div>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
+</body>
+</html>
